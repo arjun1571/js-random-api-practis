@@ -7,20 +7,18 @@ getUser();
 
 
 function displayUser(datas){
-    console.log(datas);
-
    const createDiv=  document.getElementById("display-user");
-   
 
    for (const data of datas) {
+    console.log(data);
     const createEle = document.createElement("div");
     createEle.classList.add("user")
     createEle.innerHTML=`
-    <img src="" alt="">
-    <h3>name : </h3>
-    <h4>email: </h4>
-    <h4>id: </h4>
-    <p>Phone: </p>
+    <img src=${data.picture.large} alt="">
+    <h3>name: ${data.name.first} ${data.name.last}</h3>
+    <h4>email: ${data.email} </h4>
+    <h4>id: ${data.id.value}</h4>
+    <p>Phone: ${data.phone} </p>
     `
     createDiv.appendChild(createEle);
    }
